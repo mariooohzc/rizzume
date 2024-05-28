@@ -1,43 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="/static/js/testing.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Generator</title>
-    <style>
-        /* Style the menu bar */
-        .menu-bar {
-            background-color: #333;
-            overflow: hidden;
-        }
-
-        /* Style the links inside the menu bar */
-        .menu-bar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        /* Change the color of links on hover */
-        .menu-bar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-    </style>
 </head>
 <body>
-    <!-- Menu bar -->
-    <div class="menu-bar">
-        <a href="/">Home</a>
-        <a href="/feeback-generator">Resume Feedback Generator</a>
-        <a href="/about">About</a>
-    </div>
+    <!-- menu bar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home</a>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/docx-submit">Resume Feedback Generator</a>
+        </div>
+    </nav>
 
+    <!-- form for inputing personal details-->
     <h1>Resume Generator</h1>
     <div class="container">
         <div class="mb-3">
