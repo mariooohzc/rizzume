@@ -17,7 +17,7 @@
             <a class="navbar-brand" href="/docx-submit">Resume Feedback Generator</a>
         </div>
     </nav>
-    
+
     <div class="mx-auto p-2" style="width: 800px;">
         
         <div class = "text-center">
@@ -42,8 +42,6 @@
                 <b>{{item.replace("**", "")}}</b>
             {% elif "*" in item %}
                 <p> {{item.replace("*", "")}} </p>
-            {% elif "&&&" in item %}
-                <h4 class = "text-center"> {{item.replace("&&&", "")}} </h4>
             {% else %}
                 <p>{{item}}</p>
             {% endif %}
