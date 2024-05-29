@@ -64,27 +64,29 @@ def submit_docx(request: Request):
 
 @app.post("/feedback", response_class = HTMLResponse)
 async def feedback(request: Request, feedback_file: UploadFile = File(...)):
-    doc = Document(BytesIO(await feedback_file.read()))
-    text_lines = [para.text for para in doc.paragraphs]
-    full_text = "\n".join(text_lines)
-    
-    client = Groq(api_key= os.environ.get("GROQ_API_KEY"))
+    try:
+        doc = Document(BytesIO(await feedback_file.read()))
+        text_lines = [para.text for para in doc.paragraphs]
+        full_text = "\n".join(text_lines)
 
-    chat_completion = client.chat.completions.create(
-        messages=[
-            {
-                "role": "user",
-                "content": f"Is the resume good? if it is good, please say so. Else, give advice on how to improve the resume: {full_text}",
-            }
-        ],
-        model="llama3-8b-8192",
-    )
+        client = Groq(api_key= os.environ.get("GROQ_API_KEY"))
 
-    result = chat_completion.choices[0].message.content
-    result_l = result.split("\n")
+        chat_completion = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "user",
+                    "content": f"Is the resume good? if it is good, please say so. Else, give advice on how to improve the resume: {full_text}",
+                }
+            ],
+            model="llama3-8b-8192",
+        )
 
-    return templates.TemplateResponse("docx_upload4AI.html", {"request":request, "result_l": result_l})
+        result = chat_completion.choices[0].message.content
+        result_l = result.split("\n")
 
+        return templates.TemplateResponse("docx_upload4AI.html", {"request":request, "result_l": result_l})
+    except:
+        return "Please upload a docx file"
 
 
 
