@@ -12,9 +12,6 @@ from docx import Document
 from io import BytesIO
 from groq import Groq
 
-
-
-
 app = FastAPI()
 
 templates = Jinja2Templates(directory="templates")
