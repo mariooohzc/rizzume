@@ -1,4 +1,4 @@
-FROM ghcr.io/mariooohzc/MyarioVision:main
+FROM ghcr.io/mariooohzc/rizzume:main
 
 ENV APP_PORT 7860
 
