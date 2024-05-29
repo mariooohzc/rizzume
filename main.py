@@ -75,7 +75,7 @@ async def feedback(request: Request, feedback_file: UploadFile = File(...)):
                     "content": f"Is the resume good? if it is good, please say so. Else, give advice on how to improve the resume: {full_text}",
                 }
             ],
-            model="llama3-8b-8192",
+            model="llama3-70b-8192",
         )
 
         result = chat_completion.choices[0].message.content
