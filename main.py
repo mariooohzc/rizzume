@@ -84,8 +84,3 @@ async def feedback(request: Request, feedback_file: UploadFile = File(...)):
         return templates.TemplateResponse("docx_upload4AI.html", {"request":request, "result_l": result_l})
     except:
         return "Please upload a docx file"
-
-
-
-
-

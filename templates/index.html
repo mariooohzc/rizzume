@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Resume Generator</title>
     <script src="/static/js/testing.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <title>Resume Generator</title>
     <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .input-form, .resume-preview {
+            width: 45%;
+        }
+        .input-form input, .input-form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .resume-preview {
+            border: 1px solid #000;
+            padding: 20px;
+        }
         /* Style the menu bar */
         .menu-bar {
             background-color: #333;
@@ -36,43 +55,43 @@
         <a href="/docx-submit">Resume AI Generator</a>
     </div>
 
-    <!-- form for inputing personal details-->
-    <h1>Resume Generator</h1>
-    <div class="container">
-        <div class="mb-3">
-            <form action="/generate-resume/" method="post">
-                <div class="row">
-                    <label for="full_name" class="col-sm-2 col-form-label">Full Name:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="full_name" name="full_name" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <label for="email" class="col-sm-2 col-form-label">Email:</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <label for="phone" class="col-sm-2 col-form-label">Phone:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="phone" name="phone" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <label for="skills" class="col-sm-2 col-form-label">Skills:</label>
-                    <div class="col-sm-10">
-                        <textarea class="form-control" id="skills" name="skills" required></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-10 offset-sm-2">
-                        <input type="submit" class="btn btn-primary" value="Generate Resume">
-                    </div>
-                </div>
-            </form>
+    
+    <form action="/generate-resume/" method="post" onsubmit = "inputRetainer()">
+        <div class="container">
+            <div class="input-form">
+                <h2>Input</h2>
+                <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full name" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                <input type="text" class="form-control" id="phone" name="phone" placeholder="phone" required>
+                <textarea class="form-control" id="skills" name="skills" placeholder="Experience/skills" required></textarea>
+                <input type="submit" class="btn btn-primary" value="Generate Resume">
+            </div>
+        </form>
+        <div class="resume-preview">
+            <h2>Resume Preview</h2>
+            <div id="resume-content">
+                <p>Name: <span id="preview-full_name"></span></p>
+                <p>Age: <span id="preview-email"></span></p>
+                <p>Email: <span id="preview-phone"></span></p>
+                <p>Experience: <span id="preview-skills"></span></p>
+            </div>
+        
         </div>
     </div>
-    
+    <script>
+        document.getElementById('full_name').addEventListener('input', updatePreview);
+        document.getElementById('email').addEventListener('input', updatePreview);
+        document.getElementById('phone').addEventListener('input', updatePreview);
+        document.getElementById('skills').addEventListener('input', updatePreview);
+
+        function updatePreview() {
+            document.getElementById('preview-full_name').innerText = document.getElementById('full_name').value;
+            document.getElementById('preview-email').innerText = document.getElementById('email').value;
+            document.getElementById('preview-phone').innerText = document.getElementById('phone').value;
+            document.getElementById('preview-skills').innerText = document.getElementById('skills').value;
+        }
+
+       
+    </script>
 </body>
 </html>
