@@ -62,7 +62,10 @@ Ensure users have access to up-to-date job listings.
 #### System Design
 #### Feature 1:
 ![System Design 1 Draw.io](system_design_1.png)
-#### Feature 2:
+#### <p style="color:blue">
+Feature 2:
+</p>
+
 ![System Design 7 Draw.io](system_design_2.png)
 
 </div>
