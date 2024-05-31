@@ -3,6 +3,15 @@
 
 A website by MyarioVision, to create a resume to "rizz" up your employees into calling you over for an interview  :)
 
+#### Tech Stack
+![Python](https://img.shields.io/badge/Python-FFD43B?style=flat-square&logo=python&logoColor=blue) 
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi) 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) 
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) 
+![Next JS](https://img.shields.io/badge/Next-black?style=flat-square&logo=next.js&logoColor=white)  
+![& More](https://custom-icon-badges.demolab.com/badge/And_More-white?style=flat-square&logo=plus&logoColor=black)
+
 ![rizzume_start](start_screen.png)
 
 ## Team Name: 
@@ -51,6 +60,11 @@ Limit the number of feedback requests to manage server load and maintain quality
 Provide a dedicated tab for job searches with the latest job updates in Singapore.
 Ensure users have access to up-to-date job listings.
 
+#### System Design
+![System Design Draw.io](System Design 1.png)
+
+</div>
+
 ## Timeline
 The timeline spans 13 weeks, starting from May 3 and ending on August 3, including a buffer week to ensure completion before Splashdown.
 
@@ -83,12 +97,4 @@ Backend: Flask or Django (Python)
 Machine Learning: Pandas, Sci-kit Learn, TensorFlow
 Database: SQLite or MySQL
 
-#### Tech Stack
-![Python](https://img.shields.io/badge/Python-FFD43B?style=flat-square&logo=python&logoColor=blue) 
-![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi) 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) 
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) 
-![Next JS](https://img.shields.io/badge/Next-black?style=flat-square&logo=next.js&logoColor=white)  
-![& More](https://custom-icon-badges.demolab.com/badge/And_More-white?style=flat-square&logo=plus&logoColor=black)
 
