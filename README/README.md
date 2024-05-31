@@ -1,4 +1,6 @@
-# Rizzume
+<div align="center">
+  <h1>Rizzume</h1>
+</div>
 
 A website by MyarioVision, to create a resume to "rizz" up your employees into calling you over for an interview  :)
 
