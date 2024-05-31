@@ -2,7 +2,7 @@
 
 A website by MyarioVision, to create a resume to "rizz" up your employees into calling you over for an interview  :)
 
-![rizzume_start](!(start_screen.png))
+![rizzume_start](start_screen.png)
 
 ## Team Name: MyarioVision
 
