@@ -1,4 +1,4 @@
-<div align="center">
+<div text-align="center", color = 'green'>
   <h1>Rizzume</h1>
 </div>
 
