@@ -65,35 +65,25 @@ Ensure users have access to up-to-date job listings.
 </div>
 
 ## Timeline
-The timeline spans 13 weeks, starting from May 3 and ending on August 3, including a buffer week to ensure completion before Splashdown.
+Milestone 1 - Learning the Required Technologies and showing  Technical Proof of Concept :
+4th week of May: Study Python, HTML, CSS and JavaScript
+5th week of May: Study FastAPI through tutorials and documentation. Code out at least one feature to have a minimal working system integrating backend and front end for the Technical Proof of Concept
 
-Milestone 1 - Learning the Required Technologies (1 week):
+Learn FastAPI, Python, HTML, CSS, JavaScript. Familiarize with Git for version control. Learn Docker and Github Actions for CI/CD
 
-Learn about Flask or Django.
-Familiarize with Git for version control.
-Solidify machine learning concepts and algorithms.
-Milestone 2 - Technical Proof of Concept (1 week):
+Milestone 2 – Prototype :
+1st week of June: Familiarise with Latex for the creation of resume templates
+2nd week of June: Start coding out other essential features of the resume. Develop a user-friendly interface for interacting with the app's features
+3rd week of June: Testing and debugging
 
-Implement a minimal working system integrating frontend and backend.
-Create Feature 1 to collect user input and generate a simple resume.
-Develop a basic design for the web application.
-Milestone 3 - Prototype (5.5 weeks):
+Milestone 3 - Extensions:
 
-Expand the system to include the remaining core features.
-Implement user authentication for secure access.
-Develop a user-friendly interface for interacting with the app's features.
-Test the prototype with a small group of users for feedback and bug identification.
-Milestone 4 - Extended System (5.5 weeks):
+1st week of July: Implementations of peer teams' suggestions
+2nd week of July: Expand the system to include the remaining core features
+3rd week of July: Testing and Debugging
 
-Enhance the system with extended features, including AI feedback and job updates.
-Implement advanced machine learning algorithms for feedback generation.
-Improve the scalability, performance, and reliability of the application.
-Conduct thorough testing, including unit tests, integration tests, and user acceptance testing.
-Tech Stack
-
-Frontend: HTML, CSS, Bootstrap, JavaScript
-Backend: Flask or Django (Python)
-Machine Learning: Pandas, Sci-kit Learn, TensorFlow
-Database: SQLite or MySQL
+Frontend: HTML, CSS, Bootstrap, JavaScript 
+Backend: FastAPI (Python)
+Version Control and CI/CD: Git, Github, Github actions and docker
 
 
