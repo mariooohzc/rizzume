@@ -5,7 +5,8 @@ A website by MyarioVision, to create a resume to "rizz" up your employees into c
 
 ![rizzume_start](start_screen.png)
 
-## Team Name: MyarioVision
+## Team Name: 
+<span style = "color : red"> MyarioVision </span>
 
 ## Proposed Level of Achievement:
 Apollo 11
@@ -81,4 +82,13 @@ Frontend: HTML, CSS, Bootstrap, JavaScript
 Backend: Flask or Django (Python)
 Machine Learning: Pandas, Sci-kit Learn, TensorFlow
 Database: SQLite or MySQL
+
+#### Tech Stack
+![Python](https://img.shields.io/badge/Python-FFD43B?style=flat-square&logo=python&logoColor=blue) 
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi) 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white) 
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) 
+![Next JS](https://img.shields.io/badge/Next-black?style=flat-square&logo=next.js&logoColor=white)  
+![& More](https://custom-icon-badges.demolab.com/badge/And_More-white?style=flat-square&logo=plus&logoColor=black)
 
