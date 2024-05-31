@@ -1,5 +1,5 @@
-<div style="text-align: center; color: green;">
-  <h1>Rizzume</h1>
+<div>
+  <h1 style="color: green; text-align: center;">Rizzume</h1>
 </div>
 
 A website by MyarioVision, to create a resume to "rizz" up your employees into calling you over for an interview  :)
