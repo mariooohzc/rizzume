@@ -60,7 +60,7 @@ Provide a dedicated tab for job searches with the latest job updates in Singapor
 Ensure users have access to up-to-date job listings.
 
 #### System Design
-![System Design Draw.io](System_Design_1.png)
+![System Design Draw.io](system_design_1.png)
 
 </div>
 
