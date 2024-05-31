@@ -80,6 +80,6 @@ Learn FastAPI, Python, HTML, CSS, JavaScript. Familiarize with Git for version c
 2nd week of July: Expand the system to include the remaining core features\
 3rd week of July: Testing and Debugging\
 
-Frontend: HTML, CSS, Bootstrap, JavaScript\ 
-Backend: FastAPI (Python)\
-Version Control and CI/CD: Git, Github, Github actions and docker
+1) Frontend: HTML, CSS, Bootstrap, JavaScript 
+2) Backend: FastAPI (Python) 
+3) Version Control and CI/CD: Git, Github, Github actions and docker
