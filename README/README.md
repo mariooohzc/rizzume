@@ -66,22 +66,20 @@ Ensure users have access to up-to-date job listings.
 
 ## Timeline
 #### Milestone 1 - Learning the Required Technologies and showing Technical Proof of Concept :
-4th week of May: Study Python, HTML, CSS and JavaScript
-5th week of May: Study FastAPI through tutorials and documentation. Code out at least one feature to have a minimal working system integrating backend and front end for the Technical Proof of Concept
+4th week of May: Study Python, HTML, CSS and JavaScript\
+5th week of May: Study FastAPI through tutorials and documentation. Code out at least one feature to have a minimal working system integrating backend and front end for the Technical Proof of Concept\
 Learn FastAPI, Python, HTML, CSS, JavaScript. Familiarize with Git for version control. Learn Docker and Github Actions for CI/CD
 
 #### Milestone 2 - Prototype :
-1st week of June: Familiarise with Latex for the creation of resume templates
-2nd week of June: Start coding out other essential features of the resume. Develop a user-friendly interface for interacting with the app's features
+1st week of June: Familiarise with Latex for the creation of resume templates\
+2nd week of June: Start coding out other essential features of the resume. Develop a user-friendly interface for interacting with the app's features\
 3rd week of June: Testing and debugging
 
 #### Milestone 3 - Extensions:
-1st week of July: Implementations of peer teams' suggestions
-2nd week of July: Expand the system to include the remaining core features
-3rd week of July: Testing and Debugging
+1st week of July: Implementations of peer teams' suggestions\
+2nd week of July: Expand the system to include the remaining core features\
+3rd week of July: Testing and Debugging\
 
-Frontend: HTML, CSS, Bootstrap, JavaScript 
-Backend: FastAPI (Python)
+Frontend: HTML, CSS, Bootstrap, JavaScript\ 
+Backend: FastAPI (Python)\
 Version Control and CI/CD: Git, Github, Github actions and docker
-
-
