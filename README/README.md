@@ -67,9 +67,9 @@ Ensure users have access to up-to-date job listings.
 
 </div>
 
-## Timeline
+## Timeline (Development Plan)
 #### Milestone 1 - Learning the Required Technologies and showing Technical Proof of Concept :
-4th week of May: Study Python, HTML, CSS and JavaScript\
+3rd and 4th week of May: Study Python, HTML, CSS and JavaScript\
 5th week of May: Study FastAPI through tutorials and documentation. Code out at least one feature to have a minimal working system integrating backend and front end for the Technical Proof of Concept\
 Learn FastAPI, Python, HTML, CSS, JavaScript. Familiarize with Git for version control. Learn Docker and Github Actions for CI/CD
 
@@ -81,8 +81,22 @@ Learn FastAPI, Python, HTML, CSS, JavaScript. Familiarize with Git for version c
 #### Milestone 3 - Extensions:
 1st week of July: Implementations of peer teams' suggestions\
 2nd week of July: Expand the system to include the remaining core features\
-3rd week of July: Testing and Debugging\
+3rd week of July: Testing and Debugging
 
 1) Frontend: HTML, CSS, Bootstrap, JavaScript 
 2) Backend: FastAPI (Python) 
 3) Version Control and CI/CD: Git, Github, Github actions and docker
+
+
+## Document system
+Milestone 1:\
+Implemented Software engineering principle such as CI/CD using Docker and github actions\
+Continuous Integration (CI) is achieved by configuring GitHub Actions to automatically build and test the application whenever changes are pushed to the main branch or when specific files (such as Python and HTML files) are updated. Continuous Deployment (CD) ensures that any successful build is automatically deployed to the production environment.
+
+Our CI/CD pipeline consists of several workflows defined in the .github/workflows directory:\
+1) build.yml: This workflow builds and pushes the Docker image to the GitHub Container Registry (GHCR) whenever changes are detected such as when there is changes made to the html and py file
+2) deploy.yml: This workflow deploys the Docker image to the production environment.
+3) warmer.yml: This workflow keeps the deployed application active by periodically sending requests to it every 2 days
+
+Our AI resume feedback feature is completed and works well whereas the resume generator feature is not fully completed. Nonetheless, the resume generator feature include essential components such as form input retention. This is done by ensuring user's form data is saved in the browser's local storage so that inputs are not lost if the page reloads accidentally. There is also a live preview of the resume as users fill out the form. The inputRetainer function, which is in the javascript file located in the static/js directory, checks if the browser supports web storage. It attaches an event listener to each form input field to save its value to local storage whenever the user types.
+
