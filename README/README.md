@@ -78,27 +78,7 @@ Ensure users have access to up-to-date job listings.
 
 ## Feature 2
 
-```mermaid
-flowchart TD
-    subgraph client
-        A
-    end
-    A[upload docx file] -->|HTTP:/feedback| B{FastAPI}
-    subgraph VPS
-        B --> C((Document))
-        W[HTML]
-    end
-    C --> |HTTP|D{Groq}
-    D --> E[resume feedback]
-    E --> W
-    W --> client
-    
-G[GitHub Container Registry] <--> VPS
-F[CI] --> |build|G
-F --> |deploy|VPS
-
-```
-
+![System Design 7 Draw.io](system_design_7.png)
 ![System Design 7 Draw.io](system_design_2.png)
 
 </div>
