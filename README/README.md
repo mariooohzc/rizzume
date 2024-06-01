@@ -129,11 +129,12 @@ Learn FastAPI, Python, HTML, CSS, JavaScript. Familiarize with Git for version c
 
 ## Document system
 
-Milestone 1:\
+### Milestone 1
+
 Implemented Software engineering principle such as CI/CD using Docker and github actions\
 Continuous Integration (CI) is achieved by configuring GitHub Actions to automatically build and test the application whenever changes are pushed to the main branch or when specific files (such as Python and HTML files) are updated. Continuous Deployment (CD) ensures that any successful build is automatically deployed to the managed VPS.
 
-Our CI/CD pipeline consists of several workflows defined in the .github/workflows directory:\
+Our CI/CD pipeline consists of several workflows defined in the .github/workflows directory:
 
 1) build.yml: This workflow builds and pushes the Docker image to the GitHub Container Registry (GHCR) whenever changes are detected such as when there is changes made to the html and py file
 2) deploy.yml: This workflow deploys the Docker image to the managed VPS
@@ -142,3 +143,5 @@ Our CI/CD pipeline consists of several workflows defined in the .github/workflow
 Our AI resume feedback feature is completed and works well whereas the resume generator feature is not fully completed. Nonetheless, the resume generator feature include essential components such as form input retention. This is done by ensuring user's form data is saved in the browser's local storage so that inputs are not lost if the page reloads accidentally. There is also a live preview of the resume as users fill out the form.\
 The inputRetainer function, which is in the javascript file located in the static/js directory, checks if the browser supports web storage. It attaches an event listener to each form input field to save its value to local storage whenever the user types.
 Complexity of this function is high as it requires extensive knowledge of modern JavaScript APIs in the web browsers
+
+Our AI resume feedback generator entails using python-docx library and groq api.  This feature allows users to upload their resumes in .docx format and receive feedback from an AI model on how to improve their resumes. It took me a while to code out this feature as I was not familiar with Python asynchronous programming. I realised that UploadFile uses a spooled file according to the FastAPI documentation and UploadFile.read() is an asynchronous function and hence, await keyword is needed and BytesIO is required to convert it to readable file for Document().
