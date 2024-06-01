@@ -91,12 +91,13 @@ Learn FastAPI, Python, HTML, CSS, JavaScript. Familiarize with Git for version c
 ## Document system
 Milestone 1:\
 Implemented Software engineering principle such as CI/CD using Docker and github actions\
-Continuous Integration (CI) is achieved by configuring GitHub Actions to automatically build and test the application whenever changes are pushed to the main branch or when specific files (such as Python and HTML files) are updated. Continuous Deployment (CD) ensures that any successful build is automatically deployed to the production environment.
+Continuous Integration (CI) is achieved by configuring GitHub Actions to automatically build and test the application whenever changes are pushed to the main branch or when specific files (such as Python and HTML files) are updated. Continuous Deployment (CD) ensures that any successful build is automatically deployed to the managed VPS.
 
 Our CI/CD pipeline consists of several workflows defined in the .github/workflows directory:\
 1) build.yml: This workflow builds and pushes the Docker image to the GitHub Container Registry (GHCR) whenever changes are detected such as when there is changes made to the html and py file
-2) deploy.yml: This workflow deploys the Docker image to the production environment.
+2) deploy.yml: This workflow deploys the Docker image to the managed VPS
 3) warmer.yml: This workflow keeps the deployed application active by periodically sending requests to it every 2 days
 
-Our AI resume feedback feature is completed and works well whereas the resume generator feature is not fully completed. Nonetheless, the resume generator feature include essential components such as form input retention. This is done by ensuring user's form data is saved in the browser's local storage so that inputs are not lost if the page reloads accidentally. There is also a live preview of the resume as users fill out the form. The inputRetainer function, which is in the javascript file located in the static/js directory, checks if the browser supports web storage. It attaches an event listener to each form input field to save its value to local storage whenever the user types.
-
+Our AI resume feedback feature is completed and works well whereas the resume generator feature is not fully completed. Nonetheless, the resume generator feature include essential components such as form input retention. This is done by ensuring user's form data is saved in the browser's local storage so that inputs are not lost if the page reloads accidentally. There is also a live preview of the resume as users fill out the form.\
+The inputRetainer function, which is in the javascript file located in the static/js directory, checks if the browser supports web storage. It attaches an event listener to each form input field to save its value to local storage whenever the user types.
+Complexity of this function is high as it requires extensive knowledge of modern JavaScript APIs in the web browsers
