@@ -40,32 +40,32 @@ To provide users with a comprehensive web application that streamlines the resum
 
 ## Features
 
-### Resume Generation
+#### Resume Generation
 
 Input data such as name, email, work experience, skills, and languages.
 Automatically generate polished resumes based on the provided information.
 Offer multiple templates to choose from, catering to different styles and job roles.
 
-### PDF Download
+#### PDF Download
 
 Download the created resumes in PDF format for immediate use.
 
-### Sample Resumes
+#### Sample Resumes
 
 Provide multiple sample resumes for users to explore and gain inspiration.
 Allow users to search for specific samples based on job scope.
 
-### Resume Storage
+#### Resume Storage
 
 Save created resumes securely within the application.
 Allow users to name and retrieve their resumes anytime.
 
-### AI Feedback
+#### AI Feedback
 
 Generate feedback for personal resumes using AI.
 Limit the number of feedback requests to manage server load and maintain quality.
 
-### Job Updates
+#### Job Updates
 
 Provide a dedicated tab for job searches with the latest job updates in Singapore.
 Ensure users have access to up-to-date job listings.
@@ -75,16 +75,16 @@ Ensure users have access to up-to-date job listings.
 Go to [Rizzume](https://mariooohzc-rizzume.hf.space/)
 Navigation Bar  | Steps
 ------------- | -------------
-Generate Resume  | 1)Input your details 2)Look at the preview on right side 3)Click on **Generate Resume** to get your resume
+Generate Resume  | 1)Input your details\ 2)Look at the preview on right side\ 3)Click on **Generate Resume** to get your resume\
 Resume AI Generator  | Submit a **docx file** and press upload, and wait for the AI to generate your feedback
 
 ### System Design
 
-## Feature 1
+### Feature 1
 
 ![System Design 1 Draw.io](system_design_1.png)
 
-## Feature 2
+### Feature 2
 
 ![System Design 7 Draw.io](system_design_7.png)
 ![System Design 7 Draw.io](system_design_2.png)
@@ -93,13 +93,13 @@ Resume AI Generator  | Submit a **docx file** and press upload, and wait for the
 
 ## Timeline (Development Plan)
 
-### Milestone 1 - Learning the Required Technologies and showing Technical Proof of Concept
+#### Milestone 1 - Learning the Required Technologies and showing Technical Proof of Concept
 
 3rd and 4th week of May: Study Python, HTML, CSS and JavaScript\
 5th week of May: Study FastAPI through tutorials and documentation. Code out at least one feature to have a minimal working system integrating backend and front end for the Technical Proof of Concept\
 Learn FastAPI, Python, HTML, CSS, JavaScript. Familiarize with Git for version control. Learn Docker and Github Actions for CI/CD
 
-### Milestone 2 - Prototype
+#### Milestone 2 - Prototype
 
 1st week of June: Familiarise with Latex for the creation of resume templates\
 2nd week of June: Start coding out other essential features of the resume. Develop a user-friendly interface for interacting with the app's features\
