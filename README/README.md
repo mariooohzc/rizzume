@@ -3,7 +3,7 @@
 
 A website by MyarioVision, to create a resume to "rizz" up your employees into calling you over for an interview  :)\
 website link: [click here](https://mariooohzc-rizzume.hf.space/)\
-[Go to instructions usage](##Instructions_of_Usage:)
+[Go to instructions usage](##-Instructions-of-Usage)
 
 #### Tech Stack
 
@@ -73,7 +73,7 @@ Provide a dedicated tab for job searches with the latest job updates in Singapor
 Ensure users have access to up-to-date job listings.
 
 
-## Instructions of Usage:
+## Instructions of Usage
 
 -> Go to [Rizzume](https://mariooohzc-rizzume.hf.space/)
 Navigation Bar  | Steps
