@@ -1,9 +1,9 @@
 <div align="center">
   <h1>Rizzume</h1>
 
-A website by MyarioVision, to create a resume to "rizz" up your employees into calling you over for an interview  :)
-website link: [click here](https://mariooohzc-rizzume.hf.space/)
-[Go to instructions usage](## Instructions of Usage:)
+A website by MyarioVision, to create a resume to "rizz" up your employees into calling you over for an interview  :)\
+website link: [click here](https://mariooohzc-rizzume.hf.space/)\
+[Go to instructions usage](##Instructions_of_Usage:)
 
 #### Tech Stack
 
