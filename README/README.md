@@ -70,6 +70,14 @@ Limit the number of feedback requests to manage server load and maintain quality
 Provide a dedicated tab for job searches with the latest job updates in Singapore.
 Ensure users have access to up-to-date job listings.
 
+### Instructions of Usage:
+
+Go to [Rizzume](https://mariooohzc-rizzume.hf.space/)
+Navigation Bar  | Steps
+------------- | -------------
+Generate Resume  | *Input your details *Look at the preview on right side *Click on **Generate Resume** to get your resume
+Resume AI Generator  | Submit a **docx file** and press upload, and wait for the AI to generate your feedback
+
 ### System Design
 
 ## Feature 1
