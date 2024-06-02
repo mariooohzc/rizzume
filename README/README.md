@@ -40,32 +40,32 @@ To provide users with a comprehensive web application that streamlines the resum
 
 ## Features
 
-#### Resume Generation
+#### 1)Resume Generation
 
 Input data such as name, email, work experience, skills, and languages.
 Automatically generate polished resumes based on the provided information.
 Offer multiple templates to choose from, catering to different styles and job roles.
 
-#### PDF Download
+#### 2)PDF Download
 
 Download the created resumes in PDF format for immediate use.
 
-#### Sample Resumes
+#### 3)Sample Resumes
 
 Provide multiple sample resumes for users to explore and gain inspiration.
 Allow users to search for specific samples based on job scope.
 
-#### Resume Storage
+#### 4)Resume Storage
 
 Save created resumes securely within the application.
 Allow users to name and retrieve their resumes anytime.
 
-#### AI Feedback
+#### 5)AI Feedback
 
 Generate feedback for personal resumes using AI.
 Limit the number of feedback requests to manage server load and maintain quality.
 
-#### Job Updates
+#### 6)Job Updates
 
 Provide a dedicated tab for job searches with the latest job updates in Singapore.
 Ensure users have access to up-to-date job listings.
@@ -75,7 +75,7 @@ Ensure users have access to up-to-date job listings.
 Go to [Rizzume](https://mariooohzc-rizzume.hf.space/)
 Navigation Bar  | Steps
 ------------- | -------------
-Generate Resume  | 1)Input your details\ 2)Look at the preview on right side\ 3)Click on **Generate Resume** to get your resume\
+Generate Resume  | 1) Input your details<br>2) Look at the preview on the right side<br>3) Click on **Generate Resume** to get your resume
 Resume AI Generator  | Submit a **docx file** and press upload, and wait for the AI to generate your feedback
 
 ### System Design
