@@ -76,7 +76,7 @@ Ensure users have access to up-to-date job listings.
 Navigation Bar  | Steps
 ------------- | -------------
 Generate Resume  | 1) Input your details<br>2) Look at the preview on the right side<br>3) Click on **Generate Resume** to get your resume
-Resume AI Generator  | Submit a **docx file** of your resume and press upload, then wait for the AI to generate the feedback for you.<br> ❗There is limited number of submits each user can have ❗
+Resume AI Generator  | Submit a **docx file** of your resume and press upload, then wait for the AI to generate the feedback for you.<br> ❗Take note that there is limited number of submits each user can have ❗
 
 ### System DesignO
 
