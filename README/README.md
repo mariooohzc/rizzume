@@ -2,6 +2,8 @@
   <h1>Rizzume</h1>
 
 A website by MyarioVision, to create a resume to "rizz" up your employees into calling you over for an interview  :)
+website link: [click here](https://mariooohzc-rizzume.hf.space/)
+[Go to instructions usage](## Instructions of Usage:)
 
 #### Tech Stack
 
@@ -70,6 +72,7 @@ Limit the number of feedback requests to manage server load and maintain quality
 Provide a dedicated tab for job searches with the latest job updates in Singapore.
 Ensure users have access to up-to-date job listings.
 
+
 ## Instructions of Usage:
 
 -> Go to [Rizzume](https://mariooohzc-rizzume.hf.space/)
@@ -77,6 +80,7 @@ Navigation Bar  | Steps
 ------------- | -------------
 Generate Resume  | 1) Input your details<br>2) Look at the preview on the right side<br>3) Click on **Generate Resume** to get your resume
 Resume AI Generator  | Submit a **docx file** of your resume and press upload, then wait for the AI to generate the feedback for you.<br> ❗Take note that there is limited number of submits each user can have ❗
+
 
 ## System Design
 
