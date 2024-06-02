@@ -75,7 +75,7 @@ Ensure users have access to up-to-date job listings.
 Go to [Rizzume](https://mariooohzc-rizzume.hf.space/)
 Navigation Bar  | Steps
 ------------- | -------------
-Generate Resume  | *Input your details *Look at the preview on right side *Click on **Generate Resume** to get your resume
+Generate Resume  | 1)Input your details 2)Look at the preview on right side 3)Click on **Generate Resume** to get your resume
 Resume AI Generator  | Submit a **docx file** and press upload, and wait for the AI to generate your feedback
 
 ### System Design
