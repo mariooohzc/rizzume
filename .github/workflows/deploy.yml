@@ -23,10 +23,9 @@ jobs:
       run: |
         git config --global user.email github-actions[bot]@users.noreply.github.com
         git config --global user.name github-actions[bot]
-        COMMIT_MESSAGE=$(git show -s --format=%s)
-        git clone https://$GITHUB_REPOSITORY_OWNER:$VPS_TOKEN@huggingface.co/spaces/$GITHUB_REPOSITORY_OWNER/$REPOSITORY_NAME
+        git clone https://$mariooohzc:$VPS_TOKEN@huggingface.co/spaces/mariooohzc/rizzume
         pushd $REPOSITORY_NAME
         cp ../Dockerfile .
         git add Dockerfile
-        git commit --amend -m "$COMMIT_MESSAGE"
+        git commit --amend -m "$(git show -s --format=%s)"
         git push --force-with-lease
