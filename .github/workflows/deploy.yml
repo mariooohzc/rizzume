@@ -5,8 +5,28 @@ on:
     branches: main
     paths: Dockerfile
 
+concurrency: ${{ github.job }}-${{ github.ref }}
+
 jobs:
   deploy:
-    uses: winstxnhdw/actions/.github/workflows/spaces-deploy.yml@main
-    secrets:
-      token: ${{ secrets.HF_TOKEN }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4.1.7
+      with:
+        show-progress: false
+
+    - name: push to VPS
+      env:
+        VPS_TOKEN: ${{ secrets.HF_TOKEN }}
+        REPOSITORY_NAME: ${{ github.event.repository.name }}
+      run: |
+        git config --global user.email github-actions[bot]@users.noreply.github.com
+        git config --global user.name github-actions[bot]
+        COMMIT_MESSAGE=$(git show -s --format=%s)
+        git clone https://$GITHUB_REPOSITORY_OWNER:$VPS_TOKEN@huggingface.co/spaces/$GITHUB_REPOSITORY_OWNER/$REPOSITORY_NAME
+        pushd $REPOSITORY_NAME
+        cp ../Dockerfile .
+        git add Dockerfile
+        git commit --amend -m "$COMMIT_MESSAGE"
+        git push --force-with-lease
