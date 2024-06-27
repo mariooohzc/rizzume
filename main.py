@@ -75,7 +75,6 @@ async def jobs(request: Request):
 async def jobsearch(request: Request, search: str = Form(...)):
     try:
         search_result = "-".join(search.split())
-        print(search_result)
         url = "https://www.jobstreet.com.sg/" + search_result + "-jobs"
         response = requests.get(url)
         soup = BeautifulSoup(response.content, "html.parser")
