@@ -104,6 +104,11 @@ async def jobsearch(request: Request, search: str = Form(...)):
                 company_list.append(company[2])
                 job_title_list.append(job_title[0])
 
+        if len(job_title_list) == 0:
+            job_title_list.append("No jobs found, please key in another job")
+            company_list.append("")
+            inner_url_list.append("")
+
         results = list(zip(job_title_list, company_list, inner_url_list))
     except:
         return "Error with web scraping"
