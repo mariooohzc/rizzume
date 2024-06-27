@@ -6,6 +6,10 @@ from pydantic import BaseModel
 import os
 import re
 
+# web scraping
+from bs4 import BeautifulSoup
+import requests
+
 
 # AI feeback generator libraries
 from docx import Document
