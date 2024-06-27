@@ -103,6 +103,8 @@ async def jobsearch(request: Request, search: str = Form(...)):
                 inner_url_list.append(inner_url)
                 company_list.append(company[2])
                 job_title_list.append(job_title[0])
+            if len(job_title_list) == 10:
+                break
 
         if len(job_title_list) == 0:
             job_title_list.append("No jobs found, please key in another job")
