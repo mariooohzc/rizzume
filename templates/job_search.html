@@ -80,6 +80,11 @@
             color: black;
         } 
     </style>
+    <script>
+        function alertSearch(){
+            alert("Please be patient while we process your request. It might take about 10 seconds")
+        }
+    </script>
 </head>
 <body>
     <!-- menu bar -->
@@ -91,7 +96,7 @@
 
     <h1>Job Search Results</h1>
     <div id = "search-container">
-        <form action = "/job-search" method = "post">
+        <form action = "/job-search" method = "post" onsubmit="alertSearch()">
             <input type = "text" placeholder = "Search a job..." id = "search" name = "search">
             <button type="submit" id = "search-button">Search</button>
         </form>
