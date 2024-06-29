@@ -22,48 +22,6 @@ templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-class ResumeRequest(BaseModel):
-    full_name: str
-    email: str
-    phone: str
-    skills: str
-
-
-# Feature 1: Input Data to generate Resume
-
-
-@app.get("/", response_class=HTMLResponse)
-async def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
-
-
-@app.post("/generate-resume/", response_class=HTMLResponse)
-async def generate_resume(
-    request: Request,
-    full_name: str = Form(...),
-    email: str = Form(...),
-    phone: str = Form(...),
-    skills: str = Form(...),
-):
-    resume_request = ResumeRequest(
-        full_name=full_name, email=email, phone=phone, skills=skills
-    )
-    resume_template = f"""
-    <html>
-    <head>
-        <title>Generated Resume</title>
-    </head>
-    <body>
-        <h1>Resume for {resume_request.full_name}</h1>
-        <p>Email: {resume_request.email}</p>
-        <p>Phone: {resume_request.phone}</p>
-        <p>Skills: {resume_request.skills}</p>
-    </body>
-    </html>
-    """
-    return HTMLResponse(content=resume_template)
-
-
 # web scraping feature part 1
 @app.get("/job", response_class=HTMLResponse)
 async def jobs(request: Request):
@@ -123,7 +81,7 @@ async def jobsearch(request: Request, search: str = Form(...)):
 # Feature 7: Upload of resume for AI feedback
 
 
-@app.get("/docx-submit", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse)
 def submit_docx(request: Request):
     return templates.TemplateResponse("docx_upload4AI.html", {"request": request})
 
@@ -132,6 +90,7 @@ def submit_docx(request: Request):
 async def feedback(request: Request, feedback_file: UploadFile = File(...)):
     try:
         doc = Document(BytesIO(await feedback_file.read()))
+        print(doc)
         text_lines = [para.text for para in doc.paragraphs]
         full_text = "\n".join(text_lines)
 
