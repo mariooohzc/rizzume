@@ -17,32 +17,11 @@
             color: #333;
             padding: 20px;
         }
-        table {
+        .table {
             width: 80%;
             margin: 20px auto;
-            border-collapse: collapse;
-            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
-            background-color: #fff;
         }
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #f2f2f2;
-            color: #333;
-        }
-        tr:hover {
-            background-color: #f9f9f9;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+
         #search{
             width: 350px;
             height: 40px;
@@ -101,8 +80,8 @@
         </form>
     </div>  
     
-    <table>
-        <thead>
+    <table class="table">
+        <thead class="thead-dark">
             <tr>
                 <th>Job Title</th>
                 <th>Company</th>
@@ -112,7 +91,7 @@
         <tbody>
             {% for job_title, company, url in results %}
             <tr>
-                <td>{{ job_title }}</td>
+                <td scope="row">{{ job_title }}</td>
                 <td>{{ company }}</td>
                 <td><a href="{{ url }}" target = "_blank">{{ url }}</a></td>
             </tr>
