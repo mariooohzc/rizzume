@@ -17,7 +17,7 @@
             color: #333;
             padding: 20px;
         }
-        .table {
+        .table1 {
             width: 80%;
             margin: 20px auto;
         }
@@ -80,8 +80,8 @@
         </form>
     </div>  
     
-    <table class="table">
-        <thead class="thead-dark">
+    <table class="table table1">
+        <thead>
             <tr>
                 <th>Job Title</th>
                 <th>Company</th>
@@ -91,7 +91,7 @@
         <tbody>
             {% for job_title, company, url in results %}
             <tr>
-                <td scope="row">{{ job_title }}</td>
+                <td>{{ job_title }}</td>
                 <td>{{ company }}</td>
                 <td><a href="{{ url }}" target = "_blank">{{ url }}</a></td>
             </tr>
