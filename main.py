@@ -47,35 +47,38 @@ async def jobsearch(request: Request, search: str = Form(None)):
         )
 
     # search for jobs using search result
-    search_result = "-".join(search.split())
-    url = "https://www.jobstreet.com.sg/" + search_result + "-jobs"
-    response = requests.get(url)
-    soup = BeautifulSoup(response.content, "html.parser")
-    a_tags = soup.findAll("a")
-    href_values = [a_tag.get("href") for a_tag in a_tags]
-    href_filtered = [
-        i for i in href_values if i.startswith("/job/") and i.endswith("standalone")
-    ]
-
-    inner_url_list, company_list, job_title_list = list(), list(), list()
-
-    for i in href_filtered:
-        inner_url = "https://" + "jobstreet.com.sg" + i
-        soup2 = BeautifulSoup(requests.get(inner_url).content, "html.parser")
-        x = soup2.findAll("a")
-        company = [
-            coy.get_text() for coy in x if coy.get("href").startswith("/companies")
+    try:
+        search_result = "-".join(search.split())
+        url = "https://www.jobstreet.com.sg/" + search_result + "-jobs"
+        response = requests.get(url)
+        soup = BeautifulSoup(response.content, "html.parser")
+        a_tags = soup.findAll("a")
+        href_values = [a_tag.get("href") for a_tag in a_tags]
+        href_filtered = [
+            i for i in href_values if i.startswith("/job/") and i.endswith("standalone")
         ]
-        if company[2] != "Explore companies":
-            y = soup2.findAll("h1")
-            job_title = [
-                title.get_text()
-                for title in y
-                if title.get("data-automation") == "job-detail-title"
+
+        inner_url_list, company_list, job_title_list = list(), list(), list()
+
+        for i in href_filtered:
+            inner_url = "https://" + "jobstreet.com.sg" + i
+            soup2 = BeautifulSoup(requests.get(inner_url).content, "html.parser")
+            x = soup2.findAll("a")
+            company = [
+                coy.get_text() for coy in x if coy.get("href").startswith("/companies")
             ]
-            inner_url_list.append(inner_url)
-            company_list.append(company[2])
-            job_title_list.append(job_title[0])
+            if company[2] != "Explore companies":
+                y = soup2.findAll("h1")
+                job_title = [
+                    title.get_text()
+                    for title in y
+                    if title.get("data-automation") == "job-detail-title"
+                ]
+                inner_url_list.append(inner_url)
+                company_list.append(company[2])
+                job_title_list.append(job_title[0])
+            if len(job_title_list) == 10:
+                break
 
         if len(job_title_list) == 0:
             job_title_list.append("No jobs found, please key in another job")
@@ -83,18 +86,8 @@ async def jobsearch(request: Request, search: str = Form(None)):
             inner_url_list.append("")
 
         results = list(zip(job_title_list, company_list, inner_url_list))
-
-    return templates.TemplateResponse(
-        "job_search.html", {"request": request, "results": results}
-    )
-
-
-# Feature 7: Upload of resume for AI feedback
-
-
-@app.get("/", response_class=HTMLResponse)
-def submit_docx(request: Request):
-    return templates.TemplateResponse("docx_upload4AI.html", {"request": request})
+    except:
+        return "Error with web scraping"
 
 
 # creating function to read contents in docx file
