@@ -81,13 +81,27 @@ async def jobsearch(request: Request, search: str = Form(None)):
                 break
 
         if len(job_title_list) == 0:
-            job_title_list.append("No jobs found, please key in another job")
-            company_list.append("")
-            inner_url_list.append("")
+            return templates.TemplateResponse(
+                "job_search.html",
+                {
+                    "request": request,
+                    "results": [
+                        (
+                            "No jobs found, please key in another job",
+                            "",
+                            "",
+                        )
+                    ],
+                },
+            )
 
         results = list(zip(job_title_list, company_list, inner_url_list))
     except:
         return "Error with web scraping"
+
+    return templates.TemplateResponse(
+        "job_search.html", {"request": request, "results": results}
+    )
 
 
 # Feature 7: Upload of resume for AI feedback
