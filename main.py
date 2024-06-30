@@ -90,6 +90,14 @@ async def jobsearch(request: Request, search: str = Form(None)):
         return "Error with web scraping"
 
 
+# Feature 7: Upload of resume for AI feedback
+
+
+@app.get("/", response_class=HTMLResponse)
+def submit_docx(request: Request):
+    return templates.TemplateResponse("docx_upload4AI.html", {"request": request})
+
+
 # creating function to read contents in docx file
 def filteringFile(feedback_file):
     if (not feedback_file.filename.endswith("docx")) and (
