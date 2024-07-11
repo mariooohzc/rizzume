@@ -16,16 +16,32 @@ from docx import Document
 from io import BytesIO
 from groq import Groq
 
+#Libraries for database
+import models
+from database import engine, SessionLocal
+from sqlalchemy.orm import Session
+#import shutil
+
+# Creating an instance of the FastAPI class
 app = FastAPI()
 
-templates = Jinja2Templates(directory="templates")
+# Create database tables
+models.Base.metadata.create_all(bind = engine)
 
+# Close database everytime we open it
+def get_db():
+    try:
+        db = SessionLocal()
+        yield db
+    finally:
+        db.close
+
+templates = Jinja2Templates(directory="templates")
 
 # web scraping feature part 1
 @app.get("/job", response_class=HTMLResponse)
 async def jobs(request: Request):
     return templates.TemplateResponse("job_search.html", {"request": request})
-
 
 # web scraping feature part 2
 @app.post("/job-search", response_class=HTMLResponse)
@@ -155,3 +171,10 @@ async def feedback(request: Request, feedback_file: UploadFile = File(...)):
 
 # except:
 #     return "Please upload a docx file"
+
+#1st feature on sample resumes
+@app.get("/sample-resumes/", response_class=HTMLResponse)
+async def sample_resumes(request: Request, db: Session = Depends(get_db)):
+    # samples = db.query(models.Samples).all()
+    return templates.TemplateResponse("sample.html", {"request": request,}) 
+    # "samples": samples})
