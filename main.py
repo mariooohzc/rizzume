@@ -22,8 +22,8 @@ from groq import Groq
 # from sqlalchemy.orm import Session
 # #import shutil
 
-# # Creating an instance of the FastAPI class
-# app = FastAPI()
+# Creating an instance of the FastAPI class
+app = FastAPI()
 
 # # Create database tables
 # models.Base.metadata.create_all(bind = engine)
