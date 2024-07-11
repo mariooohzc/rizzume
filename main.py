@@ -16,25 +16,25 @@ from docx import Document
 from io import BytesIO
 from groq import Groq
 
-#Libraries for database
-import models
-from database import engine, SessionLocal
-from sqlalchemy.orm import Session
-#import shutil
+# #Libraries for database
+# import models
+# from database import engine, SessionLocal
+# from sqlalchemy.orm import Session
+# #import shutil
 
-# Creating an instance of the FastAPI class
-app = FastAPI()
+# # Creating an instance of the FastAPI class
+# app = FastAPI()
 
-# Create database tables
-models.Base.metadata.create_all(bind = engine)
+# # Create database tables
+# models.Base.metadata.create_all(bind = engine)
 
-# Close database everytime we open it
-def get_db():
-    try:
-        db = SessionLocal()
-        yield db
-    finally:
-        db.close
+# # Close database everytime we open it
+# def get_db():
+#     try:
+#         db = SessionLocal()
+#         yield db
+#     finally:
+#         db.close
 
 templates = Jinja2Templates(directory="templates")
 
