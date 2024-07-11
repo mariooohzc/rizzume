@@ -173,7 +173,7 @@ async def feedback(request: Request, feedback_file: UploadFile = File(...)):
 
 #1st feature on sample resumes
 @app.get("/sample-resumes/", response_class=HTMLResponse)
-async def sample_resumes(request: Request, db: Session = Depends(get_db)):
+async def sample_resumes(request: Request):
     # samples = db.query(models.Samples).all()
     return templates.TemplateResponse("sample.html", {"request": request,}) 
     # "samples": samples})
