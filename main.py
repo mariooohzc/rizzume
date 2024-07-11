@@ -125,7 +125,6 @@ def filteringFile(feedback_file):
 @app.post("/feedback", response_class=HTMLResponse)
 async def feedback(request: Request, feedback_file: UploadFile = File(...)):
     feedback_file = filteringFile(feedback_file)
-
     if feedback_file == -1:
         return "please submit Docx file"
 
