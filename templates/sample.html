@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Resume Examples</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -97,11 +96,16 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+        .resume-card:hover {
+            transform: scale(1.05);
         }
         .resume-card img {
             max-width: 100%;
             height: auto;
             border-radius: 5px;
+            cursor: pointer;
         }
         .resume-card h3 {
             margin: 15px 0 10px;
@@ -122,7 +126,7 @@
             text-align: center;
             margin-top: 20px;
         }       
-        #pdf-preview {
+        #image-preview {
             width: 100%;
             height: auto;
             border: 1px solid #ccc;
@@ -132,7 +136,7 @@
 <body>
     <div class="navbar">
         <a href="/">Home</a>
-        <a href="/sample-resumes">Sample Resumes</a>
+        <a href="#sample-resumes">Sample Resumes</a>
     </div>
     <div class="container">
         <div class="header">
@@ -140,15 +144,18 @@
             <p>Explore our collection of professional resume examples</p>
         </div>
         <div class="form-submission">
-            <form id="uploadForm" enctype="multipart/form-data">
+            <form id="uploadForm">
                 <label for="name">Name of Sample:</label>
                 <input type="text" id="name" name="name" required>
         
                 <label for="description">Description for Sample:</label>
                 <input type="text" id="description" name="description" required>
 
-                <label for="file">Upload a PDF file of Sample:</label>
-                <input type="file" id="file" name="file" accept=".pdf" required>
+                <label for="file">Upload an Image of Sample:</label>
+                <input type="file" id="file" name="file" accept="image/*" required>
+
+                <label for="link">Link for Sample Resume Builder:</label>
+                <input type="url" id="link" name="link" required>
         
                 <button type="submit">Submit</button>
             </form>
@@ -157,28 +164,83 @@
             <input type="text" id="search-input" placeholder="Search resumes...">
             <button onclick="searchResumes()">Search</button>
         </div>
-        <div class="resume-grid" id="resume-grid">
-            <!-- Example Resume Card -->
-            <div class="resume-card">
-                <img src="resume1.png" alt="Resume Example 1">
-                <h3>Software Engineer</h3>
-                <p>Professional resume example for a software engineer.</p>
-            </div>
-            <div class="resume-card">
-                <img src="resume2.png" alt="Resume Example 2">
-                <h3>Data Scientist</h3>
-                <p>Professional resume example for a data scientist.</p>
-            </div>
-            <!-- Add more resume cards as needed -->
-        </div>
+        <div class="resume-grid" id="resume-grid"></div>
         <div id="preview-container" class="preview-container" style="display: none;">
             <h2 id="sample-name"></h2>
             <p id="sample-description"></p>
-            <canvas id="pdf-preview"></canvas>
+            <img id="image-preview" alt="Image Preview">
         </div>              
     </div>
 
     <script>
+        // Function to handle image preview
+        document.getElementById('file').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('image-preview').src = e.target.result;
+                    document.getElementById('sample-name').textContent = document.getElementById('name').value;
+                    document.getElementById('sample-description').textContent = document.getElementById('description').value;
+                    document.getElementById('preview-container').style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please upload a valid image file.');
+            }
+        });
+
+        // Function to handle form submission
+        document.getElementById('uploadForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const description = document.getElementById('description').value;
+            const link = document.getElementById('link').value;
+            const fileInput = document.getElementById('file');
+            const file = fileInput.files[0];
+
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const imageData = e.target.result;
+                    const sample = { name, description, link, imageData };
+                    saveSample(sample);
+                    displaySamples();
+                    // Clear the form and preview after submission
+                    document.getElementById('uploadForm').reset();
+                    document.getElementById('preview-container').style.display = 'none';
+                }
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please upload a valid image file.');
+            }
+        });
+
+        // Function to save sample to localStorage
+        function saveSample(sample) {
+            const samples = JSON.parse(localStorage.getItem('samples')) || [];
+            samples.push(sample);
+            localStorage.setItem('samples', JSON.stringify(samples));
+        }
+
+        // Function to display samples from localStorage
+        function displaySamples() {
+            const samples = JSON.parse(localStorage.getItem('samples')) || [];
+            const resumeGrid = document.getElementById('resume-grid');
+            resumeGrid.innerHTML = '';
+            samples.forEach(sample => {
+                const card = document.createElement('div');
+                card.className = 'resume-card';
+                card.innerHTML = `
+                    <img src="${sample.imageData}" alt="Sample Image" onclick="window.open('${sample.link}', '_blank')">
+                    <h3>${sample.name}</h3>
+                    <p>${sample.description}</p>
+                `;
+                resumeGrid.appendChild(card);
+            });
+        }
+
+        // Function to handle search
         function searchResumes() {
             const searchInput = document.getElementById('search-input').value.toLowerCase();
             const resumes = document.querySelectorAll('.resume-card');
@@ -192,47 +254,9 @@
                 }
             });
         }
+
+        // Display samples on page load
+        window.onload = displaySamples;
     </script>
-
-    <script>
-        document.getElementById('file').addEventListener('change', function (event) {
-            const file = event.target.files[0];
-            if (file && file.type === 'application/pdf') {
-                const fileReader = new FileReader();
-                fileReader.onload = function () {
-                    const typedarray = new Uint8Array(this.result);
-                    pdfjsLib.getDocument(typedarray).promise.then(function (pdf) {
-                        pdf.getPage(1).then(function (page) {
-                            const scale = 1.5;
-                            const viewport = page.getViewport({ scale: scale });
-                            const canvas = document.getElementById('pdf-preview');
-                            const context = canvas.getContext('2d');
-                            canvas.height = viewport.height;
-                            canvas.width = viewport.width;
-
-                            const renderContext = {
-                                canvasContext: context,
-                                viewport: viewport
-                            };
-                            page.render(renderContext);
-                        });
-                    });
-                };
-                fileReader.readAsArrayBuffer(file);
-            } else {
-                alert('Please upload a valid PDF file.');
-            }
-        });
-
-        document.getElementById('uploadForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const description = document.getElementById('description').value;
-            document.getElementById('sample-name').textContent = name;
-            document.getElementById('sample-description').textContent = description;
-            document.getElementById('preview-container').style.display = 'block';
-        });
-    </script>
-
 </body>
 </html>
