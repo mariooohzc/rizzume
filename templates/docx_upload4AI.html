@@ -29,7 +29,25 @@
         #goodres {
             transform: scale(0.8);
         }
+        #upload-button{
+            height: 40px;
+            border: 2px solid black;
+            background-color: white;
+            color: black;
+        }
 
+        #upload-button:hover {
+            background-color: #00308F;
+            color: white;
+        }
+        
+        #red-alert:hover{
+            background-color: #fd5c63;
+        }
+
+        #blue-alert:hover{
+            background-color: #6CB4EE;
+        }
  
     </style>
 </head>
@@ -47,11 +65,11 @@
             <h1>Resume Feedback</h1>
             <br/>
                 
-            <div class="alert alert-danger" role="alert">
-                <strong>Warning!</strong> Please do not upload resume document too many times.
+            <div id = "red-alert" class="alert alert-danger" role="alert">
+                <strong>Warning!</strong> Please avoid uploading your resume too many times.
             </div>
-            <div class="alert alert-primary" role="alert">
-                Please only upload docx file, it is the only accepted file format.
+            <div id = "blue-alert" class="alert alert-primary" role="alert">
+                Please upload your resume in .docx format only
             </div> 
 
             <br/>
@@ -88,8 +106,8 @@
             
             <br/>
             <form action="/feedback" method="post" enctype="multipart/form-data">
-                <input type="file" name="feedback_file" accept=".doc, .docx">
-                <button type="submit">Upload</button>
+                <input type="file" name="feedback_file" accept=".doc, .docx"/>
+                <button type="submit" id = "upload-button" class = "btn">Upload</button>
             </form>
             <br/>
             <br/>

@@ -24,18 +24,28 @@
 
         #search{
             width: 350px;
-            height: 40px;
-            font-size: 16px;
+            height: 50px;
+            font-size: 18px;
             border: 1px solid ;
             border-radius: 4px;
-            
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
         }
         #search-container{
             display: flex;
             justify-content: center;
+            
         }
         #search-button{
-            height: 40px;
+            height: 50px;
+            background-color: #00FFFF;
+            color: black;
+        }
+
+        #search-button:hover {
+            background-color: #00308F;
+            color: white;
         }
 
         /* Menu bar */
@@ -76,7 +86,7 @@
     <div id = "search-container">
         <form action = "/job-search" method = "post" onsubmit="alertSearch()">
             <input type = "text" placeholder = "Search a job..." id = "search" name = "search">
-            <button type="submit" id = "search-button">Search</button>
+            <button type="submit" id = "search-button" class="btn">Search</button>
         </form>
     </div>  
     
