@@ -6,13 +6,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <title>Resume Feedback</title>
     <style>
-        /* Style the menu bar */
+        /* Menu bar */
         .menu-bar {
             background-color: #333;
             overflow: hidden;
         }
 
-        /* Style the links inside the menu bar */
         .menu-bar a {
             float: left;
             display: block;
@@ -22,15 +21,19 @@
             text-decoration: none;
         }
 
-        /* Change the color of links on hover */
         .menu-bar a:hover {
             background-color: #ddd;
             color: black;
         } 
+
+        #goodres {
+            transform: scale(0.8);
+        }
+
+ 
     </style>
 </head>
 <body>
-    <!-- menu bar -->
     <div class="menu-bar">
         <a href="/">Resume AI Generator</a>
         <a href="/job">Apply Jobs</a>
@@ -39,12 +42,44 @@
     <div class="mx-auto p-2" style="width: 800px;">
         
         <div class = "text-center">
+            <br/>
             <h1>Resume Feedback</h1>
             <br/>
-            <h5 style="color: red"> Warning! This is a working feature that can produce AI generated feedback on your resume </h5>
+            <h5 style="color: red"> Warning!</h5>
             <h5 style="color: red"> Please do not upload resume document too many times </h5>
-            <br/>
             <p style="color: blue"> Please only upload docx file, it is the only accepted file format </p>
+            <br/>
+            <br/>
+
+            <div class="container border border-primary" id = "resume_pics">
+                <br/>
+                <div class="row">
+                    <div class="col">
+                        <h3>Not Allowed</h3>
+                        <p> Attractive resumes like the one below aren't allowed </p>
+                        <br/>
+                        <br/>
+                        <figure>
+                            <img src="{{ url_for('static', path='img/resume_dont.png') }}"  class="img-fluid">
+                            <br/><br/><br/><br/>
+                            <figcaption class="fig-caption">Taken from: <a href="https://www.google-sheets-templates.com/sheets-templates/resumes/1sCmVBDNMhWr1nqo5ZVDaoGKJSXmXeBf74oZ29E2YFaY" target="_blank">Google Sheets Templates</a></figcaption>
+                        </figure>
+                    </div>
+                    <div class="col">
+                        <h3>Allowed</h3>
+                        <p> Plain and simple resumes are allowed </p>
+                        <figure>
+                            <img id="goodres" src="{{ url_for('static', path='img/resume_good.png') }}" class = "img-fluid" >
+                            <figcaption class="fig-caption">Taken from: <a href="https://davida.davivienda.com/viewer/resume-templates-for-retirees.html" target="_blank">Davivienda</a></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+           
+
+            <br/>
+            <br/>
+            
             <br/>
             <form action="/feedback" method="post" enctype="multipart/form-data">
                 <input type="file" name="feedback_file" accept=".doc, .docx">
@@ -63,6 +98,10 @@
             {% else %}
                 <p>{{item}}</p>
             {% endif %}
+        {% endfor %}
+
+        {% for _ in range(10) %}
+            <br/>
         {% endfor %}
     </div>
     
