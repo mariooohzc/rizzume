@@ -16,11 +16,6 @@ from docx import Document
 from io import BytesIO
 from groq import Groq
 
-# #Libraries for database
-# import models
-# from database import engine, SessionLocal
-# from sqlalchemy.orm import Session
-# #import shutil
 
 # Creating an instance of the FastAPI class
 app = FastAPI()
@@ -159,10 +154,6 @@ async def feedback(request: Request, feedback_file: UploadFile = File(...)):
     return templates.TemplateResponse(
         "docx_upload4AI.html", {"request": request, "result_l": result_l}
     )
-
-
-# except:
-#     return "Please upload a docx file"
 
 
 # 1st feature on sample resumes
