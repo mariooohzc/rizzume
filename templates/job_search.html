@@ -48,6 +48,10 @@
             color: white;
         }
 
+        #add-loader{
+            height: 50px;
+        }
+
         /* Menu bar */
         
         .menu-bar {
@@ -69,9 +73,6 @@
             color: black;
         } 
 
-        #add-loader{
-            height: 50px;
-        }
 
           
     </style>
@@ -96,7 +97,6 @@
     </div>
 
     <h1>Job Search Results</h1>
-    <br/>
     <div id = "search-container">
         <form action = "/job-search" method = "post" onsubmit="alertSearch()">
             <input type = "text" placeholder = "Search a job..." id = "search" name = "search">
