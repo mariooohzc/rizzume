@@ -16,7 +16,15 @@ from docx import Document
 from io import BytesIO
 from groq import Groq
 
+# #Libraries for database
+# import models
+# from database import engine, SessionLocal
+# from sqlalchemy.orm import Session
+# #import shutil
+
+# Creating an instance of the FastAPI class
 app = FastAPI()
+
 
 templates = Jinja2Templates(directory="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -126,7 +134,6 @@ def filteringFile(feedback_file):
 @app.post("/feedback", response_class=HTMLResponse)
 async def feedback(request: Request, feedback_file: UploadFile = File(...)):
     feedback_file = filteringFile(feedback_file)
-
     if feedback_file == -1:
         return "please submit Docx file"
 
@@ -156,3 +163,16 @@ async def feedback(request: Request, feedback_file: UploadFile = File(...)):
 
 # except:
 #     return "Please upload a docx file"
+
+
+# 1st feature on sample resumes
+@app.get("/sample-resumes/", response_class=HTMLResponse)
+async def sample_resumes(request: Request):
+    # samples = db.query(models.Samples).all()
+    return templates.TemplateResponse(
+        "sample.html",
+        {
+            "request": request,
+        },
+    )
+    # "samples": samples})
