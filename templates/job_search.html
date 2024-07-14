@@ -68,10 +68,19 @@
             background-color: #ddd;
             color: black;
         } 
+
+          
     </style>
     <script>
         function alertSearch(){
-            alert("Please be patient while we process your request. It might take about 10 seconds")
+            var div = document.getElementById('add-loader');
+            var text = document.createElement('p');
+            text.textContent = "Please be patient while we process your request. It might take about 10 seconds";
+            var loader = document.createElement('div');
+            loader.classList.add("spinner-border");
+            div.appendChild(loader);
+            div.appendChild(text);
+
         }
     </script>
 </head>
@@ -108,5 +117,8 @@
             {% endfor %}
         </tbody>
     </table>
+    <br/>
+    <br/>
+    <center> <div id="add-loader"></div></center>
 </body>
 </html>
