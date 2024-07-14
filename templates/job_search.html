@@ -69,6 +69,10 @@
             color: black;
         } 
 
+        #add-loader{
+            height: 50px;
+        }
+
           
     </style>
     <script>
@@ -92,6 +96,7 @@
     </div>
 
     <h1>Job Search Results</h1>
+    <br/>
     <div id = "search-container">
         <form action = "/job-search" method = "post" onsubmit="alertSearch()">
             <input type = "text" placeholder = "Search a job..." id = "search" name = "search">
@@ -99,10 +104,12 @@
         </form>
     </div>  
     <br/>
-    <br/>
+
+    <center>
+        <div id="add-loader"></div>
+    </center>
     
     <table class="table table1">
-        <center> <div id="add-loader"></div></center>
         <thead>
             <tr>
                 <th>Job Title</th>
