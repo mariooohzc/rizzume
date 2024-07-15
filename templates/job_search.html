@@ -78,6 +78,12 @@
     </style>
     <script>
         function alertSearch(){
+            var table = document.getElementById('job-table');
+            var rowCount =table.rows.length;
+            for (var i = 1; i < rowCount; i++){
+                table.deleteRow(1);
+            }
+
             var div = document.getElementById('add-loader');
             var text = document.createElement('p');
             text.textContent = "Please be patient while we process your request. It might take about 10 seconds";
@@ -104,12 +110,8 @@
         </form>
     </div>  
     <br/>
-
-    <center>
-        <div id="add-loader"></div>
-    </center>
     
-    <table class="table table1">
+    <table class="table table1 table-hover" id="job-table">
         <thead>
             <tr>
                 <th>Job Title</th>
@@ -119,7 +121,7 @@
         </thead>
         <tbody>
             {% for job_title, company, url in results %}
-            <tr>
+            <tr class="jobs" style="background-color: red;">
                 <td>{{ job_title }}</td>
                 <td>{{ company }}</td>
                 <td><a href="{{ url }}" target = "_blank">{{ url }}</a></td>
@@ -127,6 +129,11 @@
             {% endfor %}
         </tbody>
     </table>
+    
+    <center>
+        <div id="add-loader"></div>
+    </center>
+    
     <br/>
     <br/>
     
