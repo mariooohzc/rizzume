@@ -8,7 +8,7 @@
     
         /* Style the menu bar */
         .menu-bar {
-            background-color: #333;
+            background-color: #002244;
             overflow: hidden;
         }
 
@@ -234,24 +234,28 @@
                 <img src="{{ url_for('static', path='img/SE.png') }}" alt="Sample Image" onclick="window.open('https://app.resumekraft.com/sample?id=-MpFUifxQIPBkQCL2xaY', '_blank')">
                 <h3>Software Engineer</h3>
                 <p>Professional resume example for a software engineer.</p>
+                <button class="delete-button" onclick="deleteOurSample(this)">Delete</button>
             </div>
             <!-- Sample Card 2 -->
             <div class="sample-card">
                 <img src="{{ url_for('static', path='img/DS.png') }}" alt="Sample Image" onclick="window.open('https://www.resumewriter.sg/blog/data-scientist-resume-sample/', '_blank')">
                 <h3>Data Scientist</h3>
                 <p>A detailed resume example for a data scientist in Singapore</p>
+                <button class="delete-button" onclick="deleteOurSample(this)">Delete</button>
             </div>
             <!-- Sample Card 3 -->
             <div class="sample-card">
                 <img src="{{ url_for('static', path='img/PM.png') }}" alt="Sample Image" onclick="window.open('https://www.tealhq.com/resume-examples/product-manager', '_blank')">
                 <h3>Product Manager</h3>
                 <p>List of Resume Examples for different types of Product Managers</p>
+                <button class="delete-button" onclick="deleteOurSample(this)">Delete</button>
             </div>
             <!-- Sample Card 4 -->
             <div class="sample-card">
                 <img src="{{ url_for('static', path='img/UX.png') }}" alt="Sample Image" onclick="window.open('https://enhancv.com/resume-examples/ux-designer/', '_blank')">
                 <h3>UX/UI Designer</h3>
                 <p>8 Resume Examples for based on level of experience, as well as the type of design </p>
+                <button class="delete-button" onclick="deleteOurSample(this)">Delete</button>
             </div>
         </div>
       
@@ -308,6 +312,13 @@
             }
         }        
 
+        function deleteOurSample(card) {
+            if (confirm(`Are you sure you want to delete this sample?`)) {
+                const grid = card.parentElement;
+                grid.remove();
+            }
+        }
+
         // Function to display samples from localStorage
         function displaySamples() {
             const samples = JSON.parse(localStorage.getItem('samples')) || [];
@@ -343,7 +354,7 @@
         // Function to handle search
         function searchResumes() {
             const searchInput = document.getElementById('search-input').value.toLowerCase();
-            const resumes = document.querySelectorAll('.resume-card');
+            const resumes = document.querySelectorAll('.resume-card, .sample-card');
             
             resumes.forEach(resume => {
                 const title = resume.querySelector('h3').innerText.toLowerCase();

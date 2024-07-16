@@ -59,7 +59,7 @@
         /* Menu bar */
         
         .menu-bar {
-            background-color: #333;
+            background-color: #002244;
             overflow: hidden;
         }
         
@@ -122,7 +122,7 @@
         </thead>
         <tbody>
             {% for job_title, company, url in results %}
-            <tr class="jobs" style="background-color: red;">
+            <tr class="jobs">
                 <td>{{ job_title }}</td>
                 <td>{{ company }}</td>
                 <td><a href="{{ url }}" target = "_blank">{{ url }}</a></td>
