@@ -79,6 +79,7 @@
         .form-submission {
             font-size: 16px;
             margin-bottom: 25px;
+            margin-top: 10px
         }
                 
         .search-bar {
@@ -200,20 +201,24 @@
     <div class="container">
         <div class="header">
             <h1>Sample Resumes</h1>
-            <p>Explore your storage of professional resume builders</p>
+            <p>Instructions of usage:</p>
+            <p>Store your sample resumes, or sample resume builders.</p>
+            <p>Input the name, description, picture of sample and the link to the website of that sample.</p> 
+            <p>Search for specific samples, based on the name you have given. </p> 
+            <p>We have also provided samples of our own. Add and delete samples freely in this storage space! </p>
         </div>
         <div class="form-submission">
             <form id="uploadForm">
-                <label for="name">Name of Sample:</label>
+                <label for="name">Sample Resume Name:</label>
                 <input type="text" id="name" name="name" required>
         
-                <label for="description">Description for Sample:</label>
+                <label for="description">Sample Description:</label>
                 <input type="text" id="description" name="description" required>
 
                 <label for="file">Upload an Image of Sample:</label>
                 <input type="file" id="file" name="file" accept="image/*" required>
 
-                <label for="link">Link for Sample Resume Builder:</label>
+                <label for="link">Link for Sample Resume (Builder):</label>
                 <input type="url" id="link" name="link" required>
         
                 <button type="submit">Submit</button>
@@ -247,7 +252,7 @@
             <div class="sample-card">
                 <img src="{{ url_for('static', path='img/PM.png') }}" alt="Sample Image" onclick="window.open('https://www.tealhq.com/resume-examples/product-manager', '_blank')">
                 <h3>Product Manager</h3>
-                <p>List of Resume Examples for different types of Product Managers</p>
+                <p>List of Resume Examples, and a builder for different types of Product Managers</p>
                 <button class="delete-button" onclick="deleteOurSample(this)">Delete</button>
             </div>
             <!-- Sample Card 4 -->

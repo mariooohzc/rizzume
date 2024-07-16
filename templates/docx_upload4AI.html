@@ -26,6 +26,13 @@
             color: black;
         }
 
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #F0B27A;
+        }
+
         #goodres {
             transform: scale(0.8);
         }
@@ -60,75 +67,76 @@
 
     <div class="mx-auto p-2" style="width: 800px;">
         
-        <div class = "text-center">
-            <br/>
-            <h1>Resume Feedback</h1>
-            <br/>
-                
-            <div id = "red-alert" class="alert alert-danger" role="alert">
-                <strong>Warning!</strong> Please avoid uploading your resume too many times.
-            </div>
-            <div id = "blue-alert" class="alert alert-primary" role="alert">
-                Please upload your resume in .docx format only
-            </div> 
-
-            <br/>
-            <br/>
-
-            <div class="container border border-primary" id = "resume_pics">
+        <div class = "container">
+            <div class = "text-center">
                 <br/>
-                <div class="row">
-                    <div class="col">
-                        <h3>Not Allowed</h3>
-                        <p> Attractive resumes like the one below aren't allowed </p>
-                        <br/>
-                        <br/>
-                        <figure>
-                            <img src="{{ url_for('static', path='img/resume_dont.png') }}"  class="img-fluid">
-                            <br/><br/><br/><br/>
-                            <figcaption class="fig-caption">Taken from: <a href="https://www.google-sheets-templates.com/sheets-templates/resumes/1sCmVBDNMhWr1nqo5ZVDaoGKJSXmXeBf74oZ29E2YFaY" target="_blank">Google Sheets Templates</a></figcaption>
-                        </figure>
-                    </div>
-                    <div class="col">
-                        <h3>Allowed</h3>
-                        <p> Plain and simple resumes are allowed </p>
-                        <figure>
-                            <img id="goodres" src="{{ url_for('static', path='img/resume_good.png') }}" class = "img-fluid" >
-                            <figcaption class="fig-caption">Taken from: <a href="https://davida.davivienda.com/viewer/resume-templates-for-retirees.html" target="_blank">Davivienda</a></figcaption>
-                        </figure>
+                <h1>Resume Feedback</h1>
+                <br/>
+                    
+                <div id = "red-alert" class="alert alert-danger" role="alert">
+                    <strong>Warning!</strong> Please avoid uploading your resume too many times.
+                </div>
+                <div id = "blue-alert" class="alert alert-primary" role="alert">
+                    Please upload your resume in .docx format only
+                </div> 
+
+                <br/>
+                <br/>
+
+                <div class="container border border-primary" id = "resume_pics">
+                    <br/>
+                    <div class="row">
+                        <div class="col">
+                            <h3>Not Allowed</h3>
+                            <p> Attractive resumes like the one below aren't allowed </p>
+                            <br/>
+                            <br/>
+                            <figure>
+                                <img src="{{ url_for('static', path='img/resume_dont.png') }}"  class="img-fluid">
+                                <br/><br/><br/><br/>
+                                <figcaption class="fig-caption">Taken from: <a href="https://www.google-sheets-templates.com/sheets-templates/resumes/1sCmVBDNMhWr1nqo5ZVDaoGKJSXmXeBf74oZ29E2YFaY" target="_blank">Google Sheets Templates</a></figcaption>
+                            </figure>
+                        </div>
+                        <div class="col">
+                            <h3>Allowed</h3>
+                            <p> Plain and simple resumes are allowed </p>
+                            <figure>
+                                <img id="goodres" src="{{ url_for('static', path='img/resume_good.png') }}" class = "img-fluid" >
+                                <figcaption class="fig-caption">Taken from: <a href="https://davida.davivienda.com/viewer/resume-templates-for-retirees.html" target="_blank">Davivienda</a></figcaption>
+                            </figure>
+                        </div>
                     </div>
                 </div>
-            </div>
-           
-
-            <br/>
-            <br/>
             
-            <br/>
-            <form action="/feedback" method="post" enctype="multipart/form-data">
-                <input type="file" name="feedback_file" accept=".doc, .docx"/>
-                <button type="submit" id = "upload-button" class = "btn">Upload</button>
-            </form>
-            <br/>
-            <br/>
+
+                <br/>
+                <br/>
+                
+                <br/>
+                <form action="/feedback" method="post" enctype="multipart/form-data">
+                    <input type="file" name="feedback_file" accept=".doc, .docx"/>
+                    <button type="submit" id = "upload-button" class = "btn">Upload</button>
+                </form>
+                <br/>
+                <br/>
+            </div>
+
+        
+            {% for item in result_l %}
+                {% if "**" in item %}
+                    <b>{{item.replace("**", "")}}</b>
+                {% elif "*" in item %}
+                    <p> {{item.replace("*", "")}} </p>
+                {% else %}
+                    <p>{{item}}</p>
+                {% endif %}
+            {% endfor %}
+
+            {% for _ in range(10) %}
+                <br/>
+            {% endfor %}
         </div>
-
-    
-        {% for item in result_l %}
-            {% if "**" in item %}
-                <b>{{item.replace("**", "")}}</b>
-            {% elif "*" in item %}
-                <p> {{item.replace("*", "")}} </p>
-            {% else %}
-                <p>{{item}}</p>
-            {% endif %}
-        {% endfor %}
-
-        {% for _ in range(10) %}
-            <br/>
-        {% endfor %}
     </div>
-    
 
 </body>
 </html>
