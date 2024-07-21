@@ -28,7 +28,19 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 # web scraping feature part 1
 @app.get("/job", response_class=HTMLResponse)
 async def jobs(request: Request):
-    return templates.TemplateResponse("job_search.html", {"request": request})
+    return templates.TemplateResponse(
+        "job_search.html",
+        {
+            "request": request,
+            "results": [
+                (
+                    "E.g. Software Engineer",
+                    "Google",
+                    "",
+                )
+            ],
+        },
+    )
 
 
 # web scraping feature part 2
