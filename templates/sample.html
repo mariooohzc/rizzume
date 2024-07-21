@@ -129,13 +129,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .resume-card h3 {
-            margin: 14px 0 12px;
-            font-size: 22px;
-            color: #333;
-        }
         .resume-card p {
-            color: #666;
             font-style: italic;
         }
 
@@ -162,7 +156,7 @@
             border-radius: 10px;
             text-align: center;
             transition: transform 0.2s;
-            width: 400px; /* Adjust width for bigger size */
+            width: 400px; 
         }
         
         .sample-card:hover {
@@ -176,6 +170,14 @@
             cursor: pointer;
         }
         
+        .black-box {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
         .delete-button {
             margin-top: 15px;
             background-color: #E74C3C;
@@ -231,39 +233,81 @@
         <p class = "samples-heading"> Your added samples </p>
         <div class="resume-grid" id="resume-grid"></div>    
         
-        <!-- Our own samples -->
-        <p class="samples-heading">Our own samples</p>
-        <div class="sample-grid" id="sample-grid">
-            <!-- Sample Card 1 -->
-            <div class="sample-card">
-                <img src="{{ url_for('static', path='img/SE.png') }}" alt="Sample Image" onclick="window.open('https://app.resumekraft.com/sample?id=-MpFUifxQIPBkQCL2xaY', '_blank')">
-                <h3>Software Engineer</h3>
-                <p>Professional resume example for a software engineer.</p>
-                <button class="delete-button" onclick="deleteOurSample(this)">Delete</button>
-            </div>
-            <!-- Sample Card 2 -->
-            <div class="sample-card">
-                <img src="{{ url_for('static', path='img/DS.png') }}" alt="Sample Image" onclick="window.open('https://www.resumewriter.sg/blog/data-scientist-resume-sample/', '_blank')">
-                <h3>Data Scientist</h3>
-                <p>A detailed resume example for a data scientist in Singapore</p>
-                <button class="delete-button" onclick="deleteOurSample(this)">Delete</button>
-            </div>
-            <!-- Sample Card 3 -->
-            <div class="sample-card">
-                <img src="{{ url_for('static', path='img/PM.png') }}" alt="Sample Image" onclick="window.open('https://www.tealhq.com/resume-examples/product-manager', '_blank')">
-                <h3>Product Manager</h3>
-                <p>List of Resume Examples, and a builder for different types of Product Managers</p>
-                <button class="delete-button" onclick="deleteOurSample(this)">Delete</button>
-            </div>
-            <!-- Sample Card 4 -->
-            <div class="sample-card">
-                <img src="{{ url_for('static', path='img/UX.png') }}" alt="Sample Image" onclick="window.open('https://enhancv.com/resume-examples/ux-designer/', '_blank')">
-                <h3>UX/UI Designer</h3>
-                <p>8 Resume Examples for based on level of experience, as well as the type of design </p>
-                <button class="delete-button" onclick="deleteOurSample(this)">Delete</button>
-            </div>
+<!-- Our own samples -->
+<p class="samples-heading">Our own samples</p>
+<div class="sample-grid" id="sample-grid">
+    <!-- Sample Card 1 -->
+    <div class="sample-card">
+        <img src="{{ url_for('static', path='img/SE.png') }}" alt="Sample Image" onclick="window.open('https://app.resumekraft.com/sample?id=-MpFUifxQIPBkQCL2xaY', '_blank')">
+        <div class="black-box">
+            <h3>Software Engineer</h3>
         </div>
-      
+        <p>Professional resume builder for a software engineer on resumekraft.com</p>
+        
+    </div>
+    <!-- Sample Card 2 -->
+    <div class="sample-card">
+        <img src="{{ url_for('static', path='img/DS.png') }}" alt="Sample Image" onclick="window.open('https://www.resumewriter.sg/blog/data-scientist-resume-sample/', '_blank')">
+        <div class="black-box">
+            <h3>Data Scientist</h3>
+        </div>
+        <p>A detailed resume example for a data scientist in Singapore -> resumewriter.sg</p>
+        
+    </div>
+    <!-- Sample Card 3 -->
+    <div class="sample-card">
+        <img src="{{ url_for('static', path='img/PM.png') }}" alt="Sample Image" onclick="window.open('https://www.tealhq.com/resume-examples/product-manager', '_blank')">
+        <div class="black-box">
+            <h3>Product Manager</h3>
+        </div>
+        <p>List of Resume Examples, and a builder for different types of Product Managers on Teal</p>
+        
+    </div>
+    <!-- Sample Card 4 -->
+    <div class="sample-card">
+        <img src="{{ url_for('static', path='img/UX.png') }}" alt="Sample Image" onclick="window.open('https://enhancv.com/resume-examples/ux-designer/', '_blank')">
+        <div class="black-box">
+            <h3>UX/UI Designer</h3>
+        </div>
+        <p>8 Resume Examples based on level of experience, as well as the type of design on Enhancv</p>
+        
+    </div>
+    <!-- Sample Card 5 -->
+    <div class="sample-card">
+        <img src="{{ url_for('static', path='img/BA.png') }}" alt="Sample Image" onclick="window.open('https://novoresume.com/career-blog/business-analyst-resume', '_blank')">
+        <div class="black-box">
+            <h3>Business Analyst</h3>
+        </div>    
+        <p>Tips to creating a perfect Business Analyst Resume.</p>
+        
+    </div>
+    <!-- Sample Card 6 -->
+    <div class="sample-card">
+        <img src="{{ url_for('static', path='img/BF.png') }}" alt="Sample Image" onclick="window.open('https://www.resumewriter.sg/blog/banking-resume-sample/', '_blank')">
+        <div class="black-box">
+            <h3>Banking and Finance</h3>
+        </div>
+        <p>Resume Writing Guide for people going to Banking and Finance -> resumewrite.sg</p>
+        
+    </div>
+    <!-- Sample Card 7 -->
+    <div class="sample-card">
+        <img src="{{ url_for('static', path='img/IB.png') }}" alt="Sample Image" onclick="window.open('https://corporatefinanceinstitute.com/resources/career/investment-banking-resume/', '_blank')">
+        <div class="black-box">
+            <h3>Investment Banking</h3>
+        </div>
+        <p>CFI's guide to creating a good Investment Banking Resume</p>
+        
+    </div>
+    <!-- Sample Card 8 -->
+    <div class="sample-card">
+        <img src="{{ url_for('static', path='img/QF.png') }}" alt="Sample Image" onclick="window.open('https://enhancv.com/resume-examples/quantitative-researcher/#/', '_blank')">
+        <div class="black-box">
+            <h3>Quantitative Researcher</h3>
+        </div>
+        <p>5 Quantitative Researcher Resume Examples & Guide for 2024 on Enhancv</p>       
+    </div>
+
 </div>
 
     </div>
@@ -317,13 +361,6 @@
             }
         }        
 
-        function deleteOurSample(card) {
-            if (confirm(`Are you sure you want to delete this sample?`)) {
-                const grid = card.parentElement;
-                grid.remove();
-            }
-        }
-
         // Function to display samples from localStorage
         function displaySamples() {
             const samples = JSON.parse(localStorage.getItem('samples')) || [];
@@ -338,8 +375,11 @@
                 img.src = sample.imagePath;
                 img.alt = 'Sample Image';
                 img.onclick = () => window.open(sample.link, '_blank');
+                const h3Container = document.createElement('div');
+                h3Container.className = 'black-box';
                 const h3 = document.createElement('h3');
                 h3.innerText = sample.name;
+                h3Container.appendChild(h3);
                 const p = document.createElement('p');
                 p.innerText = sample.description;
                 const button = document.createElement('button');
@@ -349,7 +389,7 @@
 
                 //add each element into resume-card, and the created resume-card into resume-grid
                 card.appendChild(img);
-                card.appendChild(h3);
+                card.appendChild(h3Container);
                 card.appendChild(p);
                 card.appendChild(button);
                 resumeGrid.appendChild(card);
