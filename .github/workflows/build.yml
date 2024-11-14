@@ -12,6 +12,7 @@ on:
       - pyproject.toml
       - '**.py'
       - '**.html'
+    workflow_dispatch:
 
 permissions:
   packages: write
