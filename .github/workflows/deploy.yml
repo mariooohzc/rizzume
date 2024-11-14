@@ -4,6 +4,7 @@ on:
   push:
     branches: main
     paths: Dockerfile
+  workflow_dispatch:
 
 concurrency: ${{ github.job }}-${{ github.ref }}
 
